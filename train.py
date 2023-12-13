@@ -9,9 +9,10 @@ from tqdm import tqdm
 file_dir = os.path.dirname(__file__)
 os.chdir(file_dir)
 
-from src.model import Transformer
+from model import Transformer
 
-path = "./datasets/processor_results/bpi_17"
+year = 17 # [2017,2019]
+path = f"./datasets/processor_results/bpi_{year}"
 
 with open(path + "/trace/traces.json", 'r') as f:
     i_seq = json.load(f)
@@ -245,7 +246,7 @@ if __name__ == '__main__':
         model_name=f"17_dataset_{epochs*iters_per_epoch}_iters_{sequence_length}_seqL"
     )
     
-    with open(f"17_dataset_{epochs*iters_per_epoch}_iters_{sequence_length}_seqL_losses.json", 'w') as f:
+    with open(f"{year}_dataset_{epochs*iters_per_epoch}_iters_{sequence_length}_seqL_losses.json", 'w') as f:
         json.dump(losses, f, default=convert)
     
 
