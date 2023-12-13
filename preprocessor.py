@@ -10,8 +10,8 @@ file_dir = os.path.dirname(__file__)
 os.chdir(file_dir)
 
 # Read the XES file
-year = 19 # [2012,2017,2019]
-xes = ET.parse(f'../datasets/BPI_Challenge_20{year}.xes')
+year = 19 # [2017,2019]
+xes = ET.parse(f'./datasets/BPI_Challenge_20{year}.xes')
 
 # Goal Format [(identifier, event_props, trace_props)] = batches of tuples of sequence-tensors 
         # each tuple is one sequence
